@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<header class="ph4 b--solid br-3 b--moon-gray br3">
+    <h2 class="mt1 mb0 f4 fw3 ttu tracked tc"><strong><emphasis>Snippet List:</emphasis></strong></h2>
+<ul>
+    <p class="f5 lh-copy measure">
+    {% for obj in snippet_list %}
+    <div class='ba bg-blue white'>
+      <p id="snippetTitle"><strong> {{obj.title}}</strong></p>
+    </div>
+    <div>
+      <p id="snippetLanguageDate">Language: {{obj.languages|title}} | <span> created by: {{obj.creator}}</span> | <span>  added {{obj.date_added}}</span></p> 
+    </div>
+    <div><pre><code class='language-{{obj.languages}}'>
+    <p id="snippetCode">{{obj.code }}</p>
+    </code></pre>
+    </div>
+    {% endfor %}   
+    </p> 
+</ul>  
+</header>
+{% endblock %}
