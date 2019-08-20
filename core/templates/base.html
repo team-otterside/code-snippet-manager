@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>OtterSide</title>{% endblock%}
+  {% block meta %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- CSS and JS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script>
+  <link rel="stylesheet" href="{% static 'css/prism.css' %}"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+  <script src="{% static 'js/prism.js' %}" defer></script>
+  <script src="{% static 'js/compiled.js' %}" defer></script>
+  {% endblock %}
+</head>
+
+<body class= "mw-100 bg-black-05">
+    {% include "snippets/nav.html" %}
+    <div class="flex flex-wrap">
+    <div class="mt5">
+      {% block sidebar %}
+    
+      {% endblock %}
+    </div>
+    <div class = "ml4 mt5 center tc mw-70">
+      {% block content %}
+      {% endblock %}
+    </div> 
+    </div> 
+
+  {% block footer %}
+  {% endblock %}
+</body>
+</html>
