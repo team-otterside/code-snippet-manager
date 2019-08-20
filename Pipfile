@@ -9,6 +9,9 @@ pylint = "*"
 [packages]
 django = "*"
 django-debug-toolbar = "*"
+django-registration-redux = "*"
+django-crispy-forms = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.7"
