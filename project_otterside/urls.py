@@ -16,8 +16,30 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth import logout
+from django.views.generic import RedirectView
+from core import views as core_views
 
 urlpatterns = [
+    # Index
+    path('', core_views.index, name='index'), 
+    path('', RedirectView.as_view(url='/index/', permanent=True)),
+
+    # Snippet List and Detail Views
+    path('snippets/', core_views.SnippetListView.as_view(), name='snippets'),
+    path('snippets/<int:pk>', core_views.SnippetDetailView.as_view(), name='snippet-detail'),
+
+    # Add, Edit, Delete, and Copy Snippets
+    path('add_snippet/', core_views.add_snippet, name='add_snippet'),
+    path('edit_snippet/<int:pk>/edit/', core_views.SnippetUpdate.as_view(), name='edit_snippet'),
+    path('delete_snippet/<int:pk>/delete', core_views.SnippetDelete.as_view(), name='delete_snippet'),
+
+    # User Page for Snippets
+    path('user_page/', core_views.user_view, name='user_page'),
+
+    # Search Results for Snippets
+    path('snippets/search', core_views.search_snippets, name = 'search_list'),
     path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
 ]
