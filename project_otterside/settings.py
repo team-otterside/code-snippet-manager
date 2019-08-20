@@ -139,3 +139,7 @@ REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 LOGIN_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())

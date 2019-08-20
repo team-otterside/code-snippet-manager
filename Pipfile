@@ -12,6 +12,7 @@ django-debug-toolbar = "*"
 django-registration-redux = "*"
 django-crispy-forms = "*"
 django-filter = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
