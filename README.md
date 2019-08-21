@@ -1,5 +1,7 @@
 # Team Otterside Project: Code Snippet Manager
 
+## Code Snippet Manager Website
+
 https://teamotterside-snippet-manager.herokuapp.com/
 
 In Momentum Learning, each group was asked to select a project to complete for our second group project. The project descriptions and instructions are listed at the bottom of this README.
